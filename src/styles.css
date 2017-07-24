@@ -1,0 +1,737 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: sans-serif;
+    /*font-size: 14px;*/
+    background-color: #eee;
+    margin: 0;
+    color: #222;
+}
+
+.logo {
+    font-family: sans-serif;
+    font-weight: bold;
+    /*text-transform: uppercase;*/
+    font-size: 1.1em;
+    color: slategrey;
+    text-align: center;
+
+}
+
+h1,h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #444;
+    margin: 1.5em 5px 0.6em 5px;
+    border-bottom: 1px dotted #ddd;
+}
+
+h1 {
+    font-size: 1.4em;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    /*font-weight: bold;*/
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px dotted #222;
+}
+
+hr {
+    height: 1px;
+    background-color: #ddd;
+    border: none;
+}
+
+#wrapper {
+    position: relative;
+}
+
+.Sidebar {
+    position: fixed;
+    width: 200px;
+    left: 0;
+    top: 20px;
+    bottom: 20px;
+}
+
+#right-sidebar {
+    position:fixed;
+    width: 200px;
+    right: 0;
+    top: 20px;
+    bottom: 20px;
+}
+
+#main-content {
+    position: static;
+    padding: 20px 40px;
+    margin: 20px 20px 20px 200px;
+    background-color: white;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+    font-size: small;
+}
+
+div.nav {
+    position: static;
+    left: 0;
+    margin: 0 20px 20px 20px;
+    line-height: 1.6;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+div.nav ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+div.nav li.title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    margin: 10px 0;
+}
+
+div.nav li span.username {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+div.ntf {
+    position: static;
+    left: 0;
+    margin: 0 20px 20px 20px;
+    line-height: 1.6;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: white;
+    border: 1px solid #ddd;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+div.ntf .title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    margin: 15px 10px;
+}
+
+div.ntf div.notification {
+    border: 1px dotted #ddd;
+    margin: 8px 4px;
+    padding: 0;
+    background-color: #fafafa;
+    position: relative;
+    font-size: 0.8em;
+}
+
+div.ntf div.notification a {
+    font-weight: bold;
+}
+
+div.ntf div.notification div.notification-header {
+    font-size: 0.8em;
+    color: #aaa;
+    text-align: right;
+    border-bottom: 1px dotted #ddd;;
+    margin: 0 0;
+    padding: 0 5px;
+}
+
+div.ntf .notification div.notification-content {
+    margin: 5px 5px;
+}
+
+div.auction {
+    border: 1px dotted #ddd;
+    margin: 15px 4px;
+    padding: 10px;
+    background-color: #fafafa;
+    position: relative;
+}
+
+div.auction-title {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+div.auction-title a:hover {
+    font-weight: normal;
+    /*background-color: lightgray;*/
+    /*text-decoration: underline;*/
+}
+
+div.auction-price {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 2em;
+}
+
+table {
+    table-layout: fixed;
+}
+
+table, th, td {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    padding: 2px;
+}
+
+table pre {
+    white-space: pre-wrap;
+    margin: 1px 0;
+}
+
+table td i.fa {
+    margin-right: 0.5em;
+}
+
+code {
+    font-family: Consolas, monospace;
+}
+
+div.auction div.buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Buttons */
+
+.abutton {
+    border: none;
+    padding: 3px 5px;
+    background: #ccc;
+    color: #FFF;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    cursor: pointer;
+    /*border-radius: 5px;*/
+}
+
+.nonclickable {
+    cursor: default;
+}
+
+.abutton:hover {
+    color: #FFF;
+    font-weight: normal;
+    text-decoration: none;
+    background: #888;
+    border-bottom: none;
+}
+
+.abutton-red {
+    background-color: #daa;
+}
+
+.abutton-red:hover {
+    background-color: #a55;
+}
+
+.abutton-green {
+    background-color: #ada;
+}
+
+.abutton-green:hover {
+    background-color: #5a5;
+}
+
+.abutton-blue {
+    background-color: #abd;
+}
+
+.abutton-blue:hover {
+    background-color: #56a;
+}
+
+.abutton-buyer {
+    background-color: #daa;
+}
+
+.abutton-buyer:hover {
+    background-color: #a55;
+}
+
+.abutton-bidder {
+    background-color: #ada;
+}
+
+.abutton-bidder:hover {
+    background-color: #5a5;
+}
+
+.abutton-top-bidder {
+
+    background-color: #abd;
+}
+
+.abutton-top-bidder:hover {
+
+    background-color: #56a;
+}
+
+
+
+/* Login Form */
+
+div.login {
+    border: 1px dotted #ddd;
+    padding: 25px;
+    background-color: #fafafa;
+    position: relative;
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+div.login label {
+    color: #444;
+}
+
+div.login input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1.2em;
+}
+
+div.login button {
+    /*background-color: #4CAF50;*/
+    background-color: #ada;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+div.login button:hover {
+    background-color: #5a5;
+}
+
+div.login button.register {
+    background-color: #ddd;
+}
+
+div.login button.register:hover {
+    background-color: #aaa;
+}
+
+
+/**
+Content box
+ */
+
+div.content-box {
+    border: 1px dotted #ddd;
+    margin: 15px 5px;
+    /*padding: 10px;*/
+    background-color: #fafafa;
+    position: relative;
+}
+
+div.content-box div.buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
+    clear: both;
+}
+
+div.content-box div.content-title {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+div.content-box div.content-description {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+div.content {
+    padding: 10px;
+}
+
+/* Edit form */
+
+div.edit-form {
+    padding: 25px;
+    background-color: #fafafa;
+    position: relative;
+    /*width: 70%;*/
+    /*margin: 50px auto;*/
+}
+
+div.edit-form label {
+    color: #444;
+}
+
+div.edit-form input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+
+div.edit-form input:disabled {
+    background-color: #eee;
+}
+
+
+div.edit-form button {
+    /*background-color: #4CAF50;*/
+    background-color: #ada;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+div.edit-form button.button-cancel {
+    background-color: #ccc;
+}
+
+div.edit-form button:hover {
+    background-color: #5a5;
+}
+
+div.edit-form button.button-cancel:hover {
+    background-color: #888;
+}
+
+div.edit-form button:disabled {
+    background-color: #ccc;
+}
+
+div.edit-form select {
+    /*background-color: #4CAF50;*/
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    background-color: white;
+}
+
+/* Information bar */
+
+#information {
+    position: fixed;
+    top: 25px; /* Set to 0 or wherever */
+    left: 25%;
+    width: 50%; /* set to 100% if space is available */
+    z-index:105;
+    text-align:center;
+    /*font-weight:bold;*/
+    /*color:white;*/
+    background-color: #eee;
+    padding: 5px;
+    border: 1px solid #ddd;
+    font-size: 0.8em;
+}
+
+#information a {
+    color: #888;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* Details */
+
+div.details {
+    padding: 10px;
+}
+
+div.details div.price {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 2em;
+}
+
+div.details div.prices {
+    text-align: right;
+    font-size: 2em;
+}
+
+/* Changes history */
+
+div.changes {
+    padding: 0 0;
+}
+
+/* Messages */
+
+div.messages {
+    border: 1px dotted #ddd;
+    margin: 15px 4px;
+    padding: 0 5px;
+    background-color: #fafafa;
+    position: relative;
+}
+
+div.messages div.message {
+    border-bottom: 1px dotted #ddd;
+    position: relative;
+}
+
+div.messages div.message div.message-header {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div.messages div.message div.message-header span.username {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div.messages div.message div.message-header span.datetime {
+    color: #aaa;
+    /*font-weight:bold;*/
+    font-size: 0.8em;
+    display:block;
+    float:right;
+    margin-left:10px;
+}
+
+div.messages div.message div.message-content {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+div.message-form {
+    padding: 5px;
+    position: relative;
+    /*margin: 50px auto;*/
+}
+
+div.message-form label {
+    color: #444;
+}
+
+div.message-form input {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1.0em;
+    font-family: sans-serif;
+}
+
+/* Bids */
+
+div.bids {
+    padding: 0 0;
+    /*border-bottom: none;*/
+}
+
+div.content-box table {
+    width: 100%;
+    border: none;
+
+}
+
+div.content-box th, div.content-box td {
+    padding: 8px 10px;
+    border: none;
+    height: 1.0em;
+    border-bottom: 1px dotted #ddd;
+    text-align: left;
+}
+
+div.content-box th {
+    text-transform: uppercase;
+}
+
+div.content-box tr:hover {
+    background-color: #f5f5f5
+}
+
+div.bid-form {
+    padding: 25px;
+    position: relative;
+    /*margin: 50px auto;*/
+}
+
+div.bid-form label {
+    color: #444;
+}
+
+div.bid-form input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+
+div.bid-form button {
+    /*background-color: #4CAF50;*/
+    background-color: #add;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+div.bid-form button:hover {
+    background-color: #5aa;
+}
+
+/* Auction Price */
+
+div.countdown {
+    position: relative;
+}
+
+div.countdown div.auction-price {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 2em;
+}
+
+/* User */
+
+div.user {
+    padding: 10px;
+}
+
+/* Search Form */
+div.search-form {
+    padding: 10px;
+}
+
+div.search-form input {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    font-family: sans-serif;
+}
+
+/* Upload */
+
+div.upload-form {
+    overflow: hidden;
+}
+
+div.upload-form div.upload-button {
+    float: left;
+    margin-right: -1px;
+}
+
+div.upload-form div.upload-button label {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 30px;
+
+    border: 1px solid #ddd;
+    padding: 0 5px;
+    background: #fafafa;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+div.upload-form div.upload-button label:hover {
+    /*background: #5a5;*/
+    /*color: white;*/
+    /*border: 1px solid #5a5;*/
+    background-color: #f5f5f5;
+}
+
+div.upload-form div.upload-button i {
+    vertical-align: middle;
+}
+
+div.upload-form div.progress {
+    overflow: hidden;
+    position: relative;
+    /*width: 100%;*/
+    height: 30px;
+    line-height: 30px;
+    /*background-color: #fafafa;*/
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    /*margin-top: 10px;*/
+}
+
+div.upload-form div.progress div.bar {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #eee;
+    border-right: 1px solid #ddd;
+}
+
+div.upload-form div.progress div.info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    text-align: center;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+dl {
+    margin: 10px 0 0 0;
+}
+
+dl dt {
+    float: left;
+    width: 120px;
+    text-align: right;
+
+    color: #aaa;
+    font-weight: bold;
+}
+
+dl dd {
+    margin-left: 130px;
+    padding-left: 10px;
+    border-left: 1px solid #ddd;
+}
