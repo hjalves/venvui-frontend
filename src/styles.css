@@ -11,9 +11,7 @@ body {
 }
 
 .logo {
-    font-family: sans-serif;
-    font-weight: bold;
-    /*text-transform: uppercase;*/
+    letter-spacing: 0.4em;
     font-size: 1.1em;
     color: slategrey;
     text-align: center;

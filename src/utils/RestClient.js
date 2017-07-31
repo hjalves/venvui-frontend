@@ -3,7 +3,6 @@
 import 'whatwg-fetch';
 
 function status(response) {
-  console.log(response);
   if (response.status >= 200 && response.status < 300) {
     return Promise.resolve(response);
   } else {
@@ -15,6 +14,11 @@ function json(response) {
   if (response.status === 204)
     return null;
   return response.json();
+}
+
+function log(response) {
+  console.log(response);
+  return response;
 }
 
 class RestClient {
@@ -36,7 +40,7 @@ class RestClient {
       method: "GET",
       headers: headers,
       mode: "cors"
-    }).then(status).then(json);
+    }).then(status).then(json).then(log);
   }
 
   post(path, data) {
@@ -51,7 +55,7 @@ class RestClient {
       headers: headers,
       body: JSON.stringify(data),
       mode: "cors"
-    }).then(status).then(json);
+    }).then(status).then(json).then(log);
   }
 
   put(path, data) {
@@ -66,7 +70,7 @@ class RestClient {
       headers: headers,
       body: JSON.stringify(data),
       mode: "cors"
-    }).then(status).then(json);
+    }).then(status).then(json).then(log);
   }
 
   del(path) {
@@ -79,7 +83,7 @@ class RestClient {
       method: "DELETE",
       headers: headers,
       mode: "cors"
-    }).then(status).then(json);
+    }).then(status).then(json).then(log);
   }
 }
 

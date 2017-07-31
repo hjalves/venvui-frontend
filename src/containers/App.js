@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom'
-import './App.css';
 import Sidebar from './Sidebar'
 import Home from './Home'
 import RestClient from '../utils/RestClient'
-import ProjectBrowser from '../components/ProjectBrowser'
+import ProjectBrowser from './ProjectBrowser'
 
 
 
@@ -21,7 +20,6 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.api = new RestClient("http://127.0.0.1:8000");
     this.state = {
       currentNavigation: "home",
       projects: []
