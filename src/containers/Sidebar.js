@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 
 const Sidebar = () => (
@@ -25,7 +25,7 @@ const Sidebar = () => (
     <div className="nav">
       <ul>
         <li className="title">Packages</li>
-        <li><Link to="/browse-packages">Browse</Link></li>
+        <li><Link to="/packages">Browse</Link></li>
         <li><Link to="/upload-package">Upload</Link></li>
       </ul>
     </div>

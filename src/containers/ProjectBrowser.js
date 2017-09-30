@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ProjectList from '../components/ProjectList'
 import api from '../api'
 
-class ProjectBrowser extends Component {
+class ProjectBrowser extends React.Component {
 
   constructor(props) {
     super(props);
@@ -15,9 +15,8 @@ class ProjectBrowser extends Component {
   componentDidMount() {
     api.get('/projects').then(
       result => {
-        this.setState({
-          projects: result.projects
-        });
+        const projects = result.projects;
+        this.setState({ projects });
       }
     );
   }
