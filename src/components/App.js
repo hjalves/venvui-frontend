@@ -6,6 +6,7 @@ import ProjectBrowser from './ProjectBrowser'
 import PackageBrowser from './PackageBrowser'
 import DeploymentBrowser from './DeploymentBrowser'
 import PackageDetails from './PackageDetails'
+import DeploymentDetails from './DeploymentDetails'
 
 
 class App extends React.Component {
@@ -29,6 +30,7 @@ class App extends React.Component {
             <Route exact path='/packages' component={PackageBrowser}/>
             <Route exact path='/packages/:filename' component={PackageDetails}/>
             <Route exact path='/deployments' component={DeploymentBrowser}/>
+            <Route exact path='/deployments/:key' component={DeploymentDetails}/>
           </Switch>
         </main>
       </div>

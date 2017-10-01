@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DeploymentList = ({deployments}) => {
   const deploymentRows = deployments.map((deployment) =>
     <tr key={deployment.key}>
-      <td>{deployment.key}</td>
+      <td><Link to={"/deployments/" + deployment.key}>{deployment.key}</Link></td>
       <td>{deployment.package_filename}</td>
       <td>{deployment.state}</td>
     </tr>

@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectList from '../components/ProjectList'
+import ProjectList from './ProjectList'
 import api from '../api'
 
 class ProjectBrowser extends React.Component {

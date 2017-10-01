@@ -94,6 +94,11 @@ div.nav {
     border: 1px solid #ddd;
 }
 
+div.nav .active {
+    /*border-bottom: 1px dotted #222;*/
+    font-weight: bold;
+}
+
 div.nav ul {
     padding-left: 0;
     list-style: none;

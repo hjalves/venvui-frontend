@@ -1,6 +1,6 @@
 import React from 'react';
-import api from '../api'
-import DeploymentList from "../components/DeploymentList";
+import api from '../api';
+import DeploymentList from "./DeploymentList";
 
 class DeploymentBrowser extends React.Component {
 
@@ -23,7 +23,7 @@ class DeploymentBrowser extends React.Component {
   render() {
     return (
       <div className="DeploymentBrowser">
-        <h1>Deployment Browser</h1>
+        <h1>Deployment Jobs</h1>
         <DeploymentList deployments={this.state.deployments}/>
       </div>
     )

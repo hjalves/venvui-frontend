@@ -1,6 +1,6 @@
 import React from 'react';
 import api from '../api'
-import PackageList from "../components/PackageList";
+import PackageList from "./PackageList";
 
 class PackageBrowser extends React.Component {
 
