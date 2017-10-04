@@ -1,6 +1,7 @@
 /* global fetch, URL */
 // https://developers.google.com/web/updates/2015/03/introduction-to-fetch
 import 'whatwg-fetch';
+import ndjsonStream from 'can-ndjson-stream';
 
 function status(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -41,6 +42,22 @@ class RestClient {
       headers: headers,
       mode: "cors"
     }).then(status).then(json).then(log);
+  }
+
+  getStream(path, params) {
+    const url = new URL(this.baseURL + path);
+    const headers = Object.assign({}, this.headers, {
+      "Accept": "text/plain",
+      "Content-Type": "text/plain"
+    });
+    if (params)
+      Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+    console.log("GET ", path + url.search);
+    return fetch(url, {
+      method: "GET",
+      headers: headers,
+      mode: "cors"
+    }).then(status).then(response => ndjsonStream(response.body));
   }
 
   post(path, data) {
