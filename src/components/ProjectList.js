@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProjectList = ({projects}) => {
   const projectRows = projects.map((project) =>
     <tr key={project.key}>
-      <td>{project.key}</td>
+      <td><Link to={"/projects/" + project.key}>{project.key}</Link></td>
       <td>{project.name}</td>
     </tr>
   );
