@@ -4,7 +4,9 @@ import Sidebar from './Sidebar'
 import Home from './Home'
 import ProjectBrowser from './ProjectBrowser'
 import ProjectDetails from './ProjectDetails'
+import ProjectCreator from './ProjectCreator'
 import PackageBrowser from './PackageBrowser'
+import PackageUpload from './PackageUpload'
 import DeploymentBrowser from './DeploymentBrowser'
 import PackageDetails from './PackageDetails'
 import DeploymentDetails from './DeploymentDetails'
@@ -29,8 +31,10 @@ class App extends React.Component {
             <Route exact path='/' component={Home}/>
             <Route exact path='/projects' component={ProjectBrowser}/>
             <Route exact path='/projects/:key' component={ProjectDetails}/>
+            <Route exact path='/new-project' component={ProjectCreator}/>
             <Route exact path='/packages' component={PackageBrowser}/>
             <Route exact path='/packages/:filename' component={PackageDetails}/>
+            <Route exact path='/upload-package' component={PackageUpload}/>
             <Route exact path='/deployments' component={DeploymentBrowser}/>
             <Route exact path='/deployments/:key' component={DeploymentDetails}/>
           </Switch>

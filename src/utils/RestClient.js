@@ -2,6 +2,7 @@
 // https://developers.google.com/web/updates/2015/03/introduction-to-fetch
 import 'whatwg-fetch';
 import ndjsonStream from 'can-ndjson-stream';
+import URLSearchParams from 'url-search-params'
 
 function status(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -22,6 +23,16 @@ function log(response) {
   return response;
 }
 
+function appendSearchParams(url, params) {
+  if (params) {
+    let urlSearch = new URLSearchParams();
+    Object.keys(params).forEach(key => urlSearch.append(key, params[key]));
+    if (urlSearch.toString())
+      url += '?' + urlSearch.toString();
+  }
+  return url
+}
+
 class RestClient {
   constructor(baseURL, headers) {
     this.baseURL = baseURL;
@@ -29,14 +40,12 @@ class RestClient {
   }
 
   get(path, params) {
-    const url = new URL(this.baseURL + path);
+    path = appendSearchParams(path, params);
+    const url = this.baseURL + path;
     const headers = Object.assign({}, this.headers, {
-      "Accept": "application/json",
-      "Content-Type": "application/json"
+      "Accept": "application/json"
     });
-    if (params)
-      Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-    console.log("GET ", path + url.search);
+    console.log("GET ", path);
     return fetch(url, {
       method: "GET",
       headers: headers,
@@ -45,14 +54,12 @@ class RestClient {
   }
 
   getStream(path, params) {
-    const url = new URL(this.baseURL + path);
+    path = appendSearchParams(path, params);
+    let url = this.baseURL + path;
     const headers = Object.assign({}, this.headers, {
-      "Accept": "text/plain",
-      "Content-Type": "text/plain"
+      "Accept": "text/plain, application/x-ndjson"
     });
-    if (params)
-      Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-    console.log("GET ", path + url.search);
+    console.log("GET ", path);
     return fetch(url, {
       method: "GET",
       headers: headers,
@@ -71,6 +78,20 @@ class RestClient {
       method: "POST",
       headers: headers,
       body: JSON.stringify(data),
+      mode: "cors"
+    }).then(status).then(json).then(log);
+  }
+
+  postFile(path, data) {
+    const url = this.baseURL + path;
+    const headers = Object.assign({}, this.headers, {
+      "Accept": "application/json"
+    });
+    console.log("POST ", path, data);
+    return fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: data,
       mode: "cors"
     }).then(status).then(json).then(log);
   }
