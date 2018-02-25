@@ -4,11 +4,11 @@
   "private": true,
   "dependencies": {
     "ansicolor": "^1.1.71",
-    "can-ndjson-stream": "^0.1.6",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "can-ndjson-stream": "^0.1.8",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.0.14",
+    "react-scripts": "1.1.1",
     "url-search-params": "^0.10.0"
   },
   "scripts": {
