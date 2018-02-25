@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ansicolor": "^1.1.71",
     "can-ndjson-stream": "^0.1.6",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ServicesList = ({services, handleCommand}) => {
+const ProjectServicesList = ({services, handleCommand}) => {
 
   const handleClick = (name, startup) => {
     return (e) => {
@@ -23,7 +23,7 @@ const ServicesList = ({services, handleCommand}) => {
         <thead>
         <tr>
           <th>Name</th>
-          <th>Auto-start</th>
+          <th>Unit File</th>
           <th>Status</th>
         </tr>
         </thead>
@@ -36,4 +36,4 @@ const ServicesList = ({services, handleCommand}) => {
 
 };
 
-export default ServicesList;
+export default ProjectServicesList;

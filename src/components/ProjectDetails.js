@@ -1,6 +1,6 @@
 import React from 'react';
 import api from '../api';
-import ServicesList from "./ServicesList";
+import ProjectServicesList from "./ProjectServicesList";
 import ConfigsList from "./ConfigsList";
 
 class ProjectDetails extends React.Component {
@@ -58,7 +58,7 @@ class ProjectDetails extends React.Component {
       details = <ProjectInfo project={this.state.project}/>;
     let services = null;
     if (this.state.services)
-      services = <ServicesList services={this.state.services} handleCommand={this.handleSystemdCommand}/>;
+      services = <ProjectServicesList services={this.state.services} handleCommand={this.handleSystemdCommand}/>;
     let configs = null;
     if (this.state.configs)
       configs = <ConfigsList configs={this.state.configs} handleInstall={this.handleConfigInstall}/>;
